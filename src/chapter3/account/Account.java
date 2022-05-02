@@ -1,4 +1,4 @@
-package chapter3.account.User;
+package chapter3.account;
 
 public class Account {
 

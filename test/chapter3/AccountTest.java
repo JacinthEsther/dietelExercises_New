@@ -1,9 +1,7 @@
 package chapter3;
 
-import chapter3.account.User.Account;
+import chapter3.account.Account;
 import org.junit.jupiter.api.Test;
-
-import java.io.InvalidObjectException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

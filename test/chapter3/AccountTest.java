@@ -67,6 +67,5 @@ public class AccountTest {
 
         assertThrows(IllegalArgumentException.class,()->account.withdraw(6017));
 
-
     }
 }

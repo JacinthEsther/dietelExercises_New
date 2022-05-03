@@ -50,37 +50,48 @@ public class HealthRecordComputerizationTest {
         assertEquals(("100.0 - 170.0"), healthRecord.getHeartRate().getTargetHeartRate());
     }
 
-    @Test
-    void testForBMI(){
-        assertEquals(healthRecord.getBMI(),2.67);
 
-    }
 
     @Test
     @DisplayName("test to calculate the body mass index of a person")
-    void testForNormal_BMI(){
-        assertEquals(healthRecord.getBMI(),2.67);
+    void testForUnderWeight_BMI(){
+        healthRecord.setWeightInPounds(50*2.20462);
+        healthRecord.setHeightInInches(1.77 * 39.3701);
+        assertEquals(healthRecord.getBMI(),15.96);
+        assertEquals("Underweight", healthRecord.getBMIMessage());
 
-//        assertEquals(24.69, number.getBMI());
-        assertEquals("Normal", healthRecord.getBMIMessage());
 
     }
+    @Test
+    @DisplayName("test to calculate the body mass index of a person")
+    void testForNormal_BMI(){
+        healthRecord.setWeightInPounds(80*2.20462);
+        healthRecord.setHeightInInches(1.80 * 39.3701);
+        assertEquals(healthRecord.getBMI(),24.69);
+        assertEquals("Normal", healthRecord.getBMIMessage());
 
-//    @Test
-//    @DisplayName("test to calculate the body mass index of a person")
-//    void testForOverweight_BMI(){
-//        number.calculateBMI(80,1.70);
-//        assertEquals(27.68, number.getBMI());
-//        assertEquals("Overweight", number.getBMIMessage());
-//
-//    }
-//
-//    @Test
-//    @DisplayName("test to calculate the body mass index of a person")
-//    void testForObese_BMI(){
-//        number.calculateBMI(80,1.60);
-//        assertEquals(31.25, number.getBMI());
-//        assertEquals("Obese", number.getBMIMessage());
-//
-//    }
+
+    }
+    @Test
+    @DisplayName("test to calculate the body mass index of a person")
+    void testForOverWeight_BMI(){
+        healthRecord.setWeightInPounds(80*2.20462);
+        healthRecord.setHeightInInches(1.70 * 39.3701);
+        assertEquals(healthRecord.getBMI(),27.68);
+        assertEquals("Overweight", healthRecord.getBMIMessage());
+
+
+    }
+    @Test
+        @DisplayName("test to calculate the body mass index of a person")
+        void testForObese_BMI(){
+            healthRecord.setWeightInPounds(80*2.20462);
+            healthRecord.setHeightInInches(1.60 * 39.3701);
+            assertEquals(healthRecord.getBMI(),31.25);
+            assertEquals("Obese", healthRecord.getBMIMessage());
+
+
+        }
+
+
 }

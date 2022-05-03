@@ -131,7 +131,7 @@ public class Chapter_2_Dietel {
         return (double)Math.round(area*100.0)/100.0;
     }
 
-    public void calculateBMI(int weightInKilogram, double heightInMetres) {
+    public void calculateBMI(double weightInKilogram, double heightInMetres) {
 
         checkBMI = weightInKilogram/Math.pow(heightInMetres,2);
     }

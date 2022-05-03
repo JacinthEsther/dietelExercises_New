@@ -9,7 +9,7 @@ public class ComputerizedHealthRecord {
     private final HeartRate heartRate;
     private String gender;
     private double heightInInches;
-    private int weightInPounds;
+    private double weightInPounds;
 
     public ComputerizedHealthRecord(HeartRate heartRate, String gender, double heightInInches, int weightInPounds) {
 
@@ -39,17 +39,17 @@ public class ComputerizedHealthRecord {
         this.heightInInches = heightInInches;
     }
 
-    public int getWeightInPounds() {
+    public double getWeightInPounds() {
         return weightInPounds;
     }
 
-    public void setWeightInPounds(int weightInPounds) {
+    public void setWeightInPounds(double weightInPounds) {
         this.weightInPounds = weightInPounds;
     }
 
 
     public double getBMI() {
-        number.calculateBMI(getWeightInPounds(),getHeightInInches());
+        number.calculateBMI((getWeightInPounds()/2.20462),getHeightInInches()/39.3701);
         return number.getBMI();
     }
 

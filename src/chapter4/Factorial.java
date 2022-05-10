@@ -38,4 +38,5 @@ public class Factorial {
         return (double)Math.round(total2*100.0)/100.0;
 
     }
+
 }

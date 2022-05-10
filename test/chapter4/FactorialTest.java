@@ -31,4 +31,5 @@ public class FactorialTest {
         assertEquals(3.59, factorial.getExponential());
 
     }
+
 }
